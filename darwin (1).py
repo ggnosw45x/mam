@@ -10,46 +10,23 @@ import requests
 from time import sleep
 from telegraph import Telegraph
 
-API_ID =  28142643 #tu api id bb
-API_HASH = '8d2286aaa9e2006c9268218afcdcc89e'  #tu api hash bb
+API_ID = 20597671 #tu api id bb
+API_HASH = 'e89f2c4056dd402bef8299bce660cbcd'  #tu api hash bb
 SEND_CHAT = -1001850450912 #chat o canal donde quieres que se envien las ccs
 
 client = TelegramClient('session', API_ID, API_HASH)
 
 chats  = [
-    '@CCAUTH',
-    '@BinsHellChat',
-    '@secretgroup01',
-    '@BinSkillerChat',
-    '@Venexchk',
-    '@leonbinerss',
-    '@OficialScorpionsGrupo',
-    '@RemChatChk',
-    '@alterchkchat',
-    '@AssociatonBinners1',
-    '@dSnowChat',
-    '@RickPrimeChkFree',
-    '@CHKBINS',
-    '@bcycc',
-    '@fbinschat',
-    '@savagegroupoficial',
-    '@CHECKEREstefany_bot',
-    '@CuartelCardingGrupo',
-    '@CHECKEREstefany_bot',
-    '@astachkccs',
-    '@MUGIWARAAC',
-    '@cardesclub',
-    '@savagegroupoficial',
-    '@GodsOfTheBins',
-    '@fbinschat',
-    '@CuartelCardingGrupo',
-    '@botsakuraa',
-    '@Sammy0007_Chat',
-    '@SitesCCSChat',
-    '@fbinschat',
+    '@retroccs',
+    '@ritagroupOfc',
+    '@inkbins',
     '@JohnnySinsChat',
-    '@ArthurChkGroup'
-
+    '@savagegroupoficial',
+    '@coredrops',
+    '@dSnowChat',
+    '@funcionabinsnewchat'
+    
+    
 
 
 
@@ -59,9 +36,14 @@ chats  = [
 
 PALABRAS_CLAVE = [
      "APPROVED",
+     "(Your card's security code is incorrect.)",
+     "(2010: Card Issuer Declined CVV.)",
+     "Approved!✅",
      "Approved",
      "Approved",
      "Succeeded! 🤑",
+     "Approved CCN! ✅",
+     "(1000: Approved! ✅)",
      "APPROVED",
      "APPROVED ✅",
      "✅✅✅ Approved ✅✅✅",
@@ -146,7 +128,7 @@ async def new_order(event):
                 # Rest of the code to send the message...
 
 
-                bin = requests.get(f'https://bin-api-dragon.ga/bin/api/{cc_number[:6]}')
+                bin = requests.get(f'https://lookup.binlist.net/{cc[:6]}')
                 if not bin:
                     return
 
@@ -175,9 +157,9 @@ Response ➪ `{r2}`
                ☘ INFO CARD ☘
 — — — — — — — — — — — — — — —
 [🝂] 𝘽𝙞𝙣 𝗜𝗻𝗳𝗼 - `{cc_number[:6]}`
-[🝂] 𝗜𝗻𝗳𝗼 - `{bin_json['data']['vendor']} - {bin_json['data']['type']} - {bin_json['data']['level']}`
-[🝂] 𝘽𝙖𝙣𝙠 - `{bin_json['data']['bank']}`
-[🝂] 𝘾𝙤𝙪𝙣𝙩𝙧𝙮 - `{bin_json['data']['countryInfo']['name']} | {bin_json['data']['countryInfo']['emoji']}`
+[🝂] 𝗜𝗻𝗳𝗼 - `{bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}`
+[🝂] 𝘽𝙖𝙣𝙠 - `{bin_json['bank']['name']}`
+[🝂] 𝘾𝙤𝙪𝙣𝙩𝙧𝙮 - `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
 ━━━━━━━━━━━━━━━━
 [🝂] 𝗘𝘅𝘁𝗿𝗮 - `{extra}xxxx|{mes}|{ano}|{cvv}`
 ━━━━━━━━━━━━━━━━
