@@ -21,12 +21,44 @@ chats = [
 ]
 
 PALABRAS_CLAVE = [
-    "APPROVED", "Approved", "Succeeded! 🤑", "APPROVED ✅",
-    "✅✅✅ Approved ✅✅✅", "Approved CCN", "Approved #AUTH! ✅",
-    "Approved ❇️", "APPROVED ✓", "✅Appr0ved", "Security code incorrect✅",
-    "CVV2 FAILURE POSSIBLE CVV ⌯ N - AVS: G", "Succeeded",
-    "𝑨𝒑𝒑𝒓𝒐𝒗𝒆𝒅 𝑪𝒂𝒓𝒅 ✅", "𝑪𝒉𝒂𝒓𝒈𝒆𝒅 𝟎.𝟐𝟓$", "(1000: Approved! ✅)",
-    "Subscription complete", "CVV LIVE ✅", "cardCvv (INVALID_SECURITY_CODE)"
+     "APPROVED",
+     "Approved",
+     "Approved",
+     "Succeeded! 🤑",
+     "APPROVED",
+     "APPROVED ✅",
+     "✅✅✅ Approved ✅✅✅",
+     "Approved CCN",
+     "Approved #AUTH! ✅",
+     "Approved ❇️",
+     "APPROVED ✅",
+     "APPROVED ✓",
+     "✅Appr0ved",
+     "Security code incorrect✅",
+     "Approved ❇️",
+     "CVV2 FAILURE POSSIBLE CVV ⌯ N - AVS: G",
+     "Succeeded!",
+     "𝑨𝒑𝒑𝒓𝒐𝒗𝒆𝒅 𝑪𝒂𝒓𝒅 ✅",
+     "𝑨𝒑𝒑𝒓𝒐𝒗𝒆𝒅",
+     "𝑪𝒉𝒂𝒓𝒈𝒆𝒅 𝟎.𝟐𝟓$",
+     "𝑪𝒉𝒂𝒓𝒈𝒆𝒅 $3 ✅",
+     "Succeeded",
+     "(Your card's security code is incorrect.)",
+     "(2010: Card Issuer Declined CVV.)",
+     "Approved CCN! ✅",
+     "(1000: Approved! ✅)",
+     "CVC Declined",
+     "Your card's security code is incorrect.",
+     "Error: Your card has insufficient funds.",
+     "Subscription complete",
+     "CVV LIVE ✅",
+     "Card Approved CCN/CCV Live",
+     "incorrect_cvc",
+     "cardCvv (INVALID_SECURITY_CODE)",
+     "VIVA ✅",
+     "APPROVED ✓"
+     "𝑨𝒑𝒑𝒓𝒐𝒗𝒆𝒅",
+     "✅✅✅ Approved ✅✅✅"   
 ]
 
 async def extract_cc_info(cc):
@@ -77,12 +109,12 @@ async def new_order(event):
         telegraph.create_account(short_name='Ibai')
 
         # Subir imagen y obtener URL
-        uploaded = upload_file('ibai-koi.jpg')  # asegúrate de que esta imagen exista
+        file = 'ibai-koi.jpg' # asegúrate de que esta imagen exista
         img_url = 'https://telegra.ph' + uploaded[0]
 
         # Crear contenido con imagen y estilo
         content = [
-            {"tag": "img", "attrs": {"src": img_url}},
+            {"tag": "img", "attrs": {"src": file}},
             {"tag": "b", "children": ["𝘾𝗖 𝗔𝗣𝗣𝗥𝗢𝗩𝗘𝗗 ✅"]},
             {"tag": "p", "children": ["━━━━━━━━━━━━━━━━━━━━"]},
             {"tag": "p", "children": [f"𝘾𝘾: {cc_number}|{mes}|{ano}|{cvv}"]},
@@ -119,7 +151,7 @@ Response ➪ `{r2}`
 [🝂] Bank ➪ `{bin_json['bank']['name']}`
 [🝂] Country ➪ `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
 ━━━━━━━━━━━━━━━━
-[🝂] Extra ➪ `{extra}|{mes}|{ano}|{cvv}`
+[🝂] Extra ➪ `{extra}|{mes}|{ano}|xxx`
 ━━━━━━━━━━━━━━━━
         """
 
