@@ -17,13 +17,20 @@ client = TelegramClient('session', API_ID, API_HASH)
 chats = [
     '@retroccs', '@ritagroupOfc', '@inkbins', '@JohnnySinsChat',
     '@savagegroupoficial', '@coredrops', '@dSnowChat',
-    '@kurumyb0t', '@funcionabinsnewchat'
+    '@kurumyb0t', '@funcionabinsnewchat', -1001718470703, -1001547217051, -1002306134150
 ]
 
 PALABRAS_CLAVE = [
      "APPROVED",
      "Approved",
      "Approved",
+     "Cart added",
+     "EXISTING ACCOUNT RESTRICTED!",
+     "authenticate_successful!",
+     "000: Approved!",
+     "SUCCEEDED!",
+     "Card Issuer Declined CVV",
+     "CARD ISSUER DECLINED CVV",
      "Succeeded! 🤑",
      "APPROVED",
      "APPROVED ✅",
@@ -43,10 +50,18 @@ PALABRAS_CLAVE = [
      "𝑪𝒉𝒂𝒓𝒈𝒆𝒅 𝟎.𝟐𝟓$",
      "𝑪𝒉𝒂𝒓𝒈𝒆𝒅 $3 ✅",
      "Succeeded",
+     "(YOUR CARD'S SECURITY CODE IS INCORRECT.)",
+     "(1000: APPROVED! ✅)",
+     "(INVALID CARD VERIFICATION NUMBER)",
+     "Your card has insufficient funds.",
+     "Transaction declined.402 - [card_error/incorrect_cvc/incorrect_cvc] Your card's security code is incorrect.",
+     "(2010 CARD ISSUER DECLINED CVV.)",
+     "(SECURITY CODE WAS NOT MATCHED BY THE PROCESSOR!)",
      "(Your card's security code is incorrect.)",
      "(2010: Card Issuer Declined CVV.)",
      "Approved CCN! ✅",
      "(1000: Approved! ✅)",
+     "APPROVED CVV ✅",
      "CVC Declined",
      "Your card's security code is incorrect.",
      "Error: Your card has insufficient funds.",
@@ -56,6 +71,8 @@ PALABRAS_CLAVE = [
      "incorrect_cvc",
      "cardCvv (INVALID_SECURITY_CODE)",
      "VIVA ✅",
+     "INCORRECT CVC",
+     "INVALID SECURITY CODE",
      "APPROVED ✓"
      "𝑨𝒑𝒑𝒓𝒐𝒗𝒆𝒅",
      "✅✅✅ Approved ✅✅✅"   
@@ -110,7 +127,6 @@ async def new_order(event):
 
         # Subir imagen y obtener URL
         file = 'ibai-koi.jpg' # asegúrate de que esta imagen exista
-        img_url = 'https://telegra.ph' + uploaded[0]
 
         # Crear contenido con imagen y estilo
         content = [
@@ -159,7 +175,7 @@ Response ➪ `{r2}`
         with open('cards.txt', 'a') as w:
             w.write(fullinfo + '\n')
 
-        await client.send_message(SEND_CHAT, plantilla, file='ibai-koi.jpg')
+        await client.send_message(SEND_CHAT, plantilla, file='ibai-koi.mp4')
         await asyncio.sleep(1)
 
     except Exception as ex:
