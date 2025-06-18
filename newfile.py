@@ -135,7 +135,7 @@ async def new_order(event):
             return
 
         try:
-            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=10)
+            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=20)
             bin_data.raise_for_status()
             bin_json = bin_data.json()
         except Exception as e:
