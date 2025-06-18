@@ -17,7 +17,7 @@ client = TelegramClient('session', API_ID, API_HASH)
 chats = [
     '@retroccs', '@OX_Users', '@ritagroupOfc', '@inkbins', '@JohnnySinsChat',
     '@savagegroupoficial', '@coredrops', '@dSnowChat',
-    '@kurumyb0t', '@funcionabinsnewchat', -1001718470703, -1001547217051, -1002306134150, -1002252838990
+    '@kurumyb0t', '@BzcDropV2', '@funcionabinsnewchat', -1001718470703, -1001547217051, -1002306134150, -1002252838990
 ]
 
 PALABRAS_CLAVE = [
@@ -162,52 +162,52 @@ async def new_order(event):
         r1 = ["Approved", "Subscription complete", "Charged 1$", "Your card's security code is incorrect"]
         r2 = random.choice(r1)
 
-        telegraph = Telegraph()
-        telegraph.create_account(short_name='Ibai')
+       # telegraph = Telegraph()
+       # telegraph.create_account(short_name='Ibai')
 
         # Subir imagen y obtener URL
-        file = 'ibai-koi.jpg' # asegúrate de que esta imagen exista
+        #file = 'ibai-koi.jpg' # asegúrate de que esta imagen exista
 
         # Crear contenido con imagen y estilo
-        content = [
-            {"tag": "img", "attrs": {"src": file}},
-            {"tag": "b", "children": ["𝘾𝗖 𝗔𝗣𝗣𝗥𝗢𝗩𝗘𝗗 ✅"]},
-            {"tag": "p", "children": ["━━━━━━━━━━━━━━━━━━━━"]},
-            {"tag": "p", "children": [f"𝘾𝘾: {cc_number}|{mes}|{ano}|{cvv}"]},
-            {"tag": "p", "children": [f"𝗕𝗜𝗡: {cc_number[:6]}"]},
-            {"tag": "p", "children": [f"𝗕𝗔𝗡𝗞: {bin_json['bank']['name']}"]},
-            {"tag": "p", "children": [f"𝗖𝗢𝗨𝗡𝗧𝗥𝗬: {bin_json['country']['emoji']} {bin_json['country']['name']}"]},
-            {"tag": "p", "children": [f"𝗧𝗬𝗣𝗘: {bin_json['type']} - {bin_json['scheme']} - {bin_json['brand']}"]},
-            {"tag": "p", "children": ["━━━━━━━━━━━━━━━━━━━━"]},
-            {"tag": "p", "children": ["𝗕𝗬: @IbaiScraper"]}
-        ]
+       # content = [
+          #  {"tag": "img", "attrs": {"src": file}},
+        #    {"tag": "b", "children": ["𝘾𝗖 𝗔𝗣𝗣𝗥𝗢𝗩𝗘𝗗 ✅"]},
+           # {"tag": "p", "children": ["━━━━━━━━━━━━━━━━━━━━"]},
+         #   {"tag": "p", "children": [f"𝘾𝘾: {cc_number}|{mes}|{ano}|{cvv}"]},
+        #    {"tag": "p", "children": [f"𝗕𝗜𝗡: {cc_number[:6]}"]},
+         #   {"tag": "p", "children": [f"𝗕𝗔𝗡𝗞: {bin_json['bank']['name']}"]},
+        #    {"tag": "p", "children": [f"𝗖𝗢𝗨𝗡𝗧𝗥𝗬: {bin_json['country']['emoji']} {bin_json['country']['name']}"]},
+          #  {"tag": "p", "children": [f"𝗧𝗬𝗣𝗘: {bin_json['type']} - {bin_json['scheme']} - {bin_json['brand']}"]},
+           # {"tag": "p", "children": ["━━━━━━━━━━━━━━━━━━━━"]},
+         #   {"tag": "p", "children": ["𝗕𝗬: @IbaiScraper"]}
+     #   ]
 
-        response = telegraph.create_page(
-            title="𝘾𝘾𝙎 𝘽𝙔 𝙄𝘽𝘼𝙄 𝙎𝘾𝙍𝘼𝙋",
-            author_name="Ibai",
-            content=content
-        )
+       # response = telegraph.create_page(
+          #  title="𝘾𝘾𝙎 𝘽𝙔 𝙄𝘽𝘼𝙄 𝙎𝘾𝙍𝘼𝙋",
+        #    author_name="Ibai",
+      #      content=content
+        #)
 
-        link = response["url"]
-        fullinfo = f"{cc_number}|{mes}|{ano}|{cvv}"
+        #link = response["url"]
+       # fullinfo = f"{cc_number}|{mes}|{ano}|{cvv}"
         extra = f"{cc_number[:12]}xxxx"
 
         plantilla = f"""
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-      点 𝙸𝚋𝚊𝚒 𝚂𝚌𝚛𝚊𝚙𝚙𝚎𝚛 点
+      点 **𝙸𝚋𝚊𝚒 𝚂𝚌𝚛𝚊𝚙𝚙𝚎𝚛** 点
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Card ➪ [CC]({link})
-Status ➪ `Approved ✅`
-Response ➪ `{r2}`
+**Card** ➪ `{cc_number}|{mes}|{ano}|{cvv}`
+**Status** ➪ `Approved ✅`
+**Response** ➪ `{r2}`
 ━━━━━━━━━━━━━━━━
-☘ INFO CARD ☘
+☘ **INFO CARD** ☘
 ━━━━━━━━━━━━━━━━
-[🝂] Bin ➪ `{cc_number[:6]}`
-[🝂] Info ➪ `{bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}`
-[🝂] Bank ➪ `{bin_json['bank']['name']}`
-[🝂] Country ➪ `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
+[🝂] **Bin** ➪ `{cc_number[:6]}`
+[🝂] **Info** ➪ `{bin_json['scheme']} - {bin_json['type']} - {bin_json['brand']}`
+[🝂] **Bank** ➪ `{bin_json['bank']['name']}`
+[🝂] **Country** ➪ `{bin_json['country']['name']} - {bin_json['country']['emoji']}`
 ━━━━━━━━━━━━━━━━
-[🝂] Extra ➪ `{extra}|{mes}|{ano}|xxx`
+[🝂] **Extra** ➪ `{extra}|{mes}|{ano}|xxx`
 ━━━━━━━━━━━━━━━━
         """
 
