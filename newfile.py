@@ -189,7 +189,7 @@ async def new_order(event):
         #)
 
         #link = response["url"]
-       # fullinfo = f"{cc_number}|{mes}|{ano}|{cvv}"
+        fullinfo = f"{cc_number}|{mes}|{ano}|{cvv}"
         extra = f"{cc_number[:12]}xxxx"
 
         plantilla = f"""
