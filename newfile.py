@@ -80,6 +80,27 @@ PALABRAS_CLAVE = [
      "✅✅✅ Approved ✅✅✅"   
 ]
 
+import random
+import requests
+
+# Lista de proxies válidos
+proxy_list = [
+    "http://himvxciw-rotate:v8klo4qwcrv7@p.webshare.io:80",
+    "http://lloctous-rotate:gh2xnulphkgh@p.webshare.io:80"
+]
+
+# Elegir uno al azar
+proxy_url = random.choice(proxy_list)
+
+# Construir el diccionario de proxies para requests
+proxies = {
+    "http": proxy_url,
+    "https": proxy_url
+}
+
+
+
+
 async def extract_cc_info(cc):
     pattern1 = r'\b(\d{4}\s?\d{4}\s?\d{4}\s?\d{4})\b|\b(\d{4}\s?\d{6}\s?\d{5})\b'
     pattern2 = r'\b(\d{4}\s?\d{4}\s?\d{4}\s?\d{3})\b|\b(\d{4}\s?\d{6}\s?\d{4})\b'
@@ -114,7 +135,7 @@ async def new_order(event):
             return
 
         try:
-            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}')
+            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=10)
             bin_data.raise_for_status()
             bin_json = bin_data.json()
         except Exception as e:
