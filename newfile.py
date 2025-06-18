@@ -15,7 +15,7 @@ SEND_CHAT = -1001850450912  # chat o canal donde se envian las ccs
 client = TelegramClient('session', API_ID, API_HASH)
 
 chats = [
-    '@retroccs', '@ritagroupOfc', '@inkbins', '@JohnnySinsChat',
+    '@retroccs', '@OX_Users', '@ritagroupOfc', '@inkbins', '@JohnnySinsChat',
     '@savagegroupoficial', '@coredrops', '@dSnowChat',
     '@kurumyb0t', '@funcionabinsnewchat', -1001718470703, -1001547217051, -1002306134150, -1002252838990
 ]
@@ -23,7 +23,13 @@ chats = [
 PALABRAS_CLAVE = [
      "APPROVED",
      "Approved",
+     "Approved (100)",
+     "Charged $1 (Refound)",
+     "✅ STATUS: APPROVED ✅
+ 🧾 RESPONSE: EXISTING ACCOUNT RESTRICTED!",
      "Approved CCN",
+     "✅ STATUS: APPROVED ✅",
+     "🧾 RESPONSE: EXISTING ACCOUNT RESTRICTED!",
      "Status: Approved ✅",
      "Response: Card added",
      "Cart added",
@@ -35,6 +41,18 @@ PALABRAS_CLAVE = [
      "CARD ISSUER DECLINED CVV",
      "Succeeded! 🤑",
      "APPROVED",
+     "• STATUS ⌁  APPROVED! ✅
+• MESSAGE ⌁  SUCCEEDED!",
+     "• STATUS ⌁  APPROVED! ✅",
+     "• MESSAGE ⌁  SUCCEEDED!",
+     "⋄ ︱ STATUS: APPROVED!✅",
+     "⋄ ︱ RESPONSE: (YOUR CARD'S SECURITY CODE IS INCORRECT.)",
+     "⋄ ︱ STATUS: APPROVED!✅
+⋄ ︱ RESPONSE: (YOUR CARD'S SECURITY CODE IS INCORRECT.)",
+     "• »  STATUS ⇾ APPROVED ✅",
+     "• »  RESPONSE ⇾ EXISTING ACCOUNT RESTRICTED!",
+     "• »  STATUS ⇾ APPROVED ✅
+• »  RESPONSE ⇾ EXISTING ACCOUNT RESTRICTED!",
      "APPROVED ✅",
      "✅✅✅ Approved ✅✅✅",
      "Approved CCN",
@@ -77,6 +95,10 @@ PALABRAS_CLAVE = [
      "INVALID SECURITY CODE",
      "APPROVED ✓"
      "𝑨𝒑𝒑𝒓𝒐𝒗𝒆𝒅",
+     "⋄ ︱ STATUS: APPROVED CCN! ✅",
+     "⋄ ︱ RESPONSE: (2010 CARD ISSUER DECLINED CVV)",
+     "⋄ ︱ STATUS: APPROVED CCN! ✅
+⋄ ︱ RESPONSE: (2010 CARD ISSUER DECLINED CVV)",
      "✅✅✅ Approved ✅✅✅"   
 ]
 
