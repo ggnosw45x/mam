@@ -23,7 +23,7 @@ chats = [
 PALABRAS_CLAVE = [
      "APPROVED",
      "Approved",
-     "Approved CCN',
+     "Approved CCN",
      "Status: Approved ✅",
      "Response: Card added",
      "Cart added",
