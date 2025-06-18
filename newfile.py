@@ -17,13 +17,15 @@ client = TelegramClient('session', API_ID, API_HASH)
 chats = [
     '@retroccs', '@ritagroupOfc', '@inkbins', '@JohnnySinsChat',
     '@savagegroupoficial', '@coredrops', '@dSnowChat',
-    '@kurumyb0t', '@funcionabinsnewchat', -1001718470703, -1001547217051, -1002306134150
+    '@kurumyb0t', '@funcionabinsnewchat', -1001718470703, -1001547217051, -1002306134150, -1002252838990
 ]
 
 PALABRAS_CLAVE = [
      "APPROVED",
      "Approved",
-     "Approved",
+     "Approved CCN',
+     "Status: Approved ✅",
+     "Response: Card added",
      "Cart added",
      "EXISTING ACCOUNT RESTRICTED!",
      "authenticate_successful!",
