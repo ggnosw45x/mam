@@ -1,4 +1,4 @@
-import time
+qimport time
 import telethon
 import asyncio
 import os
@@ -102,8 +102,8 @@ import requests
 
 # Lista de proxies válidos
 proxy_list = [
-    "http://himvxciw-rotate:v8klo4qwcrv7@p.webshare.io:80",
-    "http://lloctous-rotate:gh2xnulphkgh@p.webshare.io:80"
+    "http://dhoduqvg-rotate:nauhm6fvtjrg@p.webshare.io:80",
+    "http://mrzegyfc-rotate:soqrxxrpps7h@p.webshare.io:80"
 ]
 
 # Elegir uno al azar
@@ -152,7 +152,7 @@ async def new_order(event):
             return
 
         try:
-            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=20)
+            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=25)
             bin_data.raise_for_status()
             bin_json = bin_data.json()
         except Exception as e:
@@ -216,7 +216,7 @@ async def new_order(event):
             w.write(fullinfo + '\n')
 
         await client.send_message(SEND_CHAT, plantilla, file='ibai-koi.mp4')
-        await asyncio.sleep(1)
+        await asyncio.sleep(2)
 
     except Exception as ex:
         print(f'Exception: {ex}')
