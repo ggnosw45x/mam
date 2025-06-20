@@ -1,4 +1,4 @@
-qimport time
+import time
 import telethon
 import asyncio
 import os
@@ -152,14 +152,14 @@ async def new_order(event):
             return
 
         try:
-            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=25)
+            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=26)
             bin_data.raise_for_status()
             bin_json = bin_data.json()
         except Exception as e:
             print(f"Error consultando BIN: {e}")
             return
 
-        r1 = ["Approved", "Subscription complete", "Charged 1$", "Your card's security code is incorrect"]
+        r1 = ["Approved", "Approved CCN", "Subscription complete", "Charged 1$", "Your card's security code is incorrect"]
         r2 = random.choice(r1)
 
        # telegraph = Telegraph()
