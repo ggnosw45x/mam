@@ -1,4 +1,4 @@
-qimport time
+import time
 import telethon
 import asyncio
 import os
