@@ -1,4 +1,5 @@
 import time
+from telethon.tl.custom import Button
 import telethon
 import asyncio
 import os
@@ -216,8 +217,8 @@ async def new_order(event):
         # Guardar la tarjeta completa
         with open('cards.txt', 'a') as w:
             w.write(fullinfo + '\n')
-
-        await client.send_message(SEND_CHAT, plantilla, file='ibai-koi.mp4')
+        await client.send_file(SEND_CHAT, 'ibai-koi.mp4', caption=plantilla, buttons=[Button.url("Owner", "https://t.me/varlxn")])
+        #await client.send_message(SEND_CHAT, plantilla, file='ibai-koi.mp4')
         await asyncio.sleep(1)
 
     except Exception as ex:
