@@ -137,7 +137,9 @@ def get_sent_cards():
             return [line.strip() for line in f.readlines()]
     return []
 
+
 @client.on(events.MessageEdited(chats=chats))
+@client.on(events.NewMessage(chats=chats))
 async def new_order(event):
     try:
         mensaje = event.message.message
@@ -152,7 +154,7 @@ async def new_order(event):
             return
 
         try:
-            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=26)
+            bin_data = requests.get(f'https://lookup.binlist.net/{cc_number[:6]}', proxies=proxies, timeout=23)
             bin_data.raise_for_status()
             bin_json = bin_data.json()
         except Exception as e:
@@ -216,7 +218,7 @@ async def new_order(event):
             w.write(fullinfo + '\n')
 
         await client.send_message(SEND_CHAT, plantilla, file='ibai-koi.mp4')
-        await asyncio.sleep(2)
+        await asyncio.sleep(1)
 
     except Exception as ex:
         print(f'Exception: {ex}')
